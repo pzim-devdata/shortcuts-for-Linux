@@ -1,0 +1,5 @@
+#!/bin/sh
+#sudo apt install yad
+HOME=/home/neptune
+yad --notification --no-middle --command="$HOME/Programmes/Changer_sortie_audio_commuter" --image=$HOME/Programmes/ICONES/audio_output.png --text="Changer de sortie audio" --menu='Changer de sortie audio!'$HOME/Programmes/Changer_sortie_audio'||Quitter!quit'
+

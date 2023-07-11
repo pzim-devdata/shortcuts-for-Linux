@@ -1,0 +1,5 @@
+#!/bin/sh
+#sudo apt install yad
+HOME=/home/neptune
+yad --notification --no-middle --command="sh -c 'sleep 2; xset dpms force off'" --image=$HOME/Programmes/ICONES/TV_Off.png --text="Eteindre la télé" --menu='Eteindre TV!sh -c "sleep 2; xset dpms force off"|Mettre en veille!sh -c "/home/neptune/VPN/VPNautoconnect.sh & systemctl suspend"||Quitter!quit'
+

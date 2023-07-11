@@ -1,5 +1,5 @@
 #!/usr/bin/sh
 #sudo apt install yad
-HOME=/home/neptune
-/usr/bin/yad --notification --no-middle --command='gnome-system-monitor' --image=$HOME/Programmes/ICONES/system-task.png --text="Moniteur système" --menu='Ouvrir le moniteur système!gnome-system-monitor|Fermer le moniteur système!pkill -1 gnome-system-monitor -f -n|||About!firefox-esr https://doc.ubuntu-fr.org/yad_yet_another_dialog|Quitter!quit'
+
+/usr/bin/yad --notification --no-middle --command='gnome-system-monitor' --image=system-monitor-app-symbolic --text="Show system monitor" --menu='Show system monitor!gnome-system-monitor|Close system monitor!pkill -1 gnome-system-monitor -f -n|||About!firefox-esr https://doc.ubuntu-fr.org/yad_yet_another_dialog|Quit!quit'
 

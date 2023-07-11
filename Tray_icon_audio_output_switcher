@@ -1,0 +1,27 @@
+#!/bin/sh
+#sudo apt install yad
+#sudo apt-get install pulseaudio
+
+function switch_audio_sink() {
+    # Démarrer PulseAudio
+    pulseaudio --start
+
+    # Obtenir les index des deux premiers périphériques audio
+    SINK_INDEX1=$(pacmd list-sinks | grep 'index:' | grep -o '[0-9]*' | head -n 1 | tail -n 1)
+    SINK_INDEX2=$(pacmd list-sinks | grep 'index:' | grep -o '[0-9]*' | head -n 2 | tail -n 1)
+
+    # Obtenir le périphérique audio actif
+    ACTIVE_SINK=$(pacmd list-sinks | grep '* index:' | grep -o '[0-9]*')
+
+    # Changer le périphérique audio par défaut en fonction de l'index actif
+    if [ "$ACTIVE_SINK" = "$SINK_INDEX1" ]; then
+        pacmd set-default-sink "$SINK_INDEX2"
+    else 
+        pacmd set-default-sink "$SINK_INDEX1"
+    fi
+}
+# Exporter la fonction pour la rendre accessible depuis un autre processus
+export -f switch_audio_sink
+
+yad --notification --no-middle --command='bash -c "switch_audio_sink"' --image=audio-card-symbolic --text="Changer de sortie audio" --menu='Changer de sortie audio!bash -c "switch_audio_sink"||Quitter!quit'
+

@@ -23,5 +23,5 @@ function switch_audio_sink() {
 # Exporter la fonction pour la rendre accessible depuis un autre processus
 export -f switch_audio_sink
 
-yad --notification --no-middle --command='bash -c "switch_audio_sink"' --image=audio-card-symbolic --text="Changer de sortie audio" --menu='Changer de sortie audio!bash -c "switch_audio_sink"||Quitter!quit'
+yad --notification --no-middle --command='bash -c "switch_audio_sink"' --image=audio-card-symbolic --text="Switch audio output" --menu='Switch audio output!bash -c "switch_audio_sink"||Quit!quit'
 

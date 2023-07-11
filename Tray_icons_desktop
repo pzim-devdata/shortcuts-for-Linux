@@ -1,7 +1,7 @@
 #!/bin/sh
 #sudo apt install yad
-
 #sudo apt install xdotool
-yad --notification --no-middle --command="xdotool key --clearmodifiers Super+d" --image=user-desktop-symbolic --text="Afficher le Bureau" --menu='Afficher le Bureau!xdotool key --clearmodifiers Super+d||Quitter!quit'
+
+yad --notification --no-middle --command="xdotool key --clearmodifiers Super+d" --image=user-desktop-symbolic --text="Show the desktop" --menu='Show the desktop!xdotool key --clearmodifiers Super+d||Quit!quit'
 
 
